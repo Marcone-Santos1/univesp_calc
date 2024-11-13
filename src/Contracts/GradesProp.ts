@@ -1,4 +1,4 @@
 export interface GradesProp {
-    g1: number|string,
-    g2: number|string,
+    g1: number,
+    g2: number,
 }

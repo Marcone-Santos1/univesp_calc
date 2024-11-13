@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 import {FaCalculator} from "react-icons/fa";
 import {FiArrowDown} from "react-icons/fi";
 import {GradeInput} from "../components/GradeInput.tsx";
@@ -20,11 +20,11 @@ const GradeCalculator = () => {
         "Simular Exame"
     ];
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         let {value} = e.target;
         const {name, max} = e.target;
 
-        if (value >= Number(max)) {
+        if (Number(value) >= Number(max)) {
             e.target.value = max;
             value = max
         }
@@ -68,18 +68,18 @@ const GradeCalculator = () => {
             case 0:
                 return (
                     <div className="space-y-4">
-                        <GradeInput grades={grades.g1} onChange={handleInputChange} name={"g1"}
+                        <GradeInput grade={grades.g1} onChange={handleInputChange} name={"g1"}
                                     placeholder={"Nota Prova Regular"}/>
-                        <GradeInput grades={grades.g2} onChange={handleInputChange} name={"g2"}
+                        <GradeInput grade={grades.g2} onChange={handleInputChange} name={"g2"}
                                     placeholder={"Média final das avaliativas semanais"}/>
                     </div>
                 );
             case 1:
                 return (
                     <div className="space-y-4">
-                        <GradeInput grades={grades.g1} onChange={handleInputChange} name={"g1"}
+                        <GradeInput grade={grades.g1} onChange={handleInputChange} name={"g1"}
                                     placeholder={"Média final regular"} max={4.99}/>
-                        <GradeInput grades={grades.g2} onChange={handleInputChange} name={"g2"}
+                        <GradeInput grade={grades.g2} onChange={handleInputChange} name={"g2"}
                                     placeholder={"Prova Exame"}/>
                     </div>
                 );
@@ -87,14 +87,14 @@ const GradeCalculator = () => {
                 return (
                     <div className="space-y-4">
 
-                        <GradeInput grades={grades.g1} onChange={handleInputChange} name={"g1"}
+                        <GradeInput grade={grades.g1} onChange={handleInputChange} name={"g1"}
                                     placeholder={"média final das avaliativas semanais"}/>
                     </div>
                 )
             case 3:
                 return (
                     <div className="space-y-4">
-                        <GradeInput grades={grades.g1} onChange={handleInputChange} name={"g1"}
+                        <GradeInput grade={grades.g1} onChange={handleInputChange} name={"g1"}
                                     placeholder={"média final regular"} max={4.99}/>
                     </div>
                 );

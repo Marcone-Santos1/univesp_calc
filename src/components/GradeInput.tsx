@@ -1,11 +1,12 @@
 import {PESOS} from "../utils/Constants.ts";
+import {ChangeEvent} from "react";
 
 interface GradeInputProp {
-    grades: string|number,
+    grade: string|number,
     name: string,
     placeholder: string,
     max?: number,
-    onChange: (e) => void
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export function GradeInput({grade, placeholder, name, max, onChange}: GradeInputProp) {
