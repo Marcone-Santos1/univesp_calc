@@ -1,17 +1,32 @@
-import {useState} from "react";
-import GradeCalculator from "./GradeCalculator.tsx";
+import {useEffect, useState} from "react";
 
+import {GradeCalculator} from "./GradeCalculator.tsx";
 import {FaRegSun} from "react-icons/fa";
 import {FaRegMoon} from "react-icons/fa";
+import {Content} from "../components/Content.tsx";
 
 
 export const App = () => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false); // Estado para controlar o dark mode
+    const darkTheme = localStorage.getItem('darkTheme');
+
+    const [isDarkMode, setIsDarkMode] = useState(darkTheme !== 'not-dark');
+
+
+    useEffect(() => {
+
+        if (isDarkMode) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+
+        localStorage.setItem('darkTheme', isDarkMode ? 'dark' : 'not-dark');
+    }, [isDarkMode]);
+
 
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
-        document.body.classList.toggle("dark");
     };
 
     return (
@@ -30,6 +45,7 @@ export const App = () => {
             </header>
 
             <GradeCalculator/>
+            <Content/>
 
         </>
     )
