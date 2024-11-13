@@ -18,7 +18,7 @@ export function GradeInput({grade, placeholder, name, max, onChange}: GradeInput
             value={grade}
             max={max ? max : PESOS.MAX_GRADE}
             onChange={onChange}
-            className="w-full p-2 border rounded-lg text-gray-200 focus:ring-2 focus:ring-blue-400 dark:border-gray-500 dark:focus:ring-gray-800 dark:bg-gray-700 dark:placeholder-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600"
+            className="w-full p-2 border rounded-lg text-gray-900 focus:ring-2 focus:ring-blue-400 dark:text-gray-100 dark:border-gray-500 dark:focus:ring-gray-800 dark:bg-gray-700 dark:placeholder-gray-400 dark:hover:bg-gray-600"
         />
     );
 }
