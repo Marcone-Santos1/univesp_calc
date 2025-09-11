@@ -32,7 +32,7 @@ export const App = () => {
     return (
         <>
             <header className="flex items-center justify-around bg-[#F0F7FF] dark:bg-gray-800 p-4 text-white">
-                <h1 className="text-3xl font-bold text-black dark:text-white">Calculadora Média UNIVESP</h1>
+                <h1 className="text-3xl font-bold text-black dark:text-white">Calculadora Média UNIVESP - dev</h1>
                 <button
                     onClick={() => toggleDarkMode()}
                     className="px-4 py-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded"
