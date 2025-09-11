@@ -111,7 +111,7 @@ export const GradeCalculator = () => {
                     className="max-w-screen-md w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-80">
                     <div className="flex items-center justify-center space-x-2 mb-6">
                         <FaCalculator className="text-2xl text-blue-500 dark:text-blue-300"/>
-                        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Calculadora Univesp</h1>
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Calculadora Univesp</h2>
                     </div>
 
                     <div className="mb-6">
@@ -130,8 +130,6 @@ export const GradeCalculator = () => {
                                             ? "bg-blue-500 dark:bg-blue-700 text-white"
                                             : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                                     }`}
-                                    role="tab"
-                                    aria-selected={activeTab === index}
                                 >
                                     {tab}
                                 </button>
