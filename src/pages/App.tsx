@@ -1,53 +1,52 @@
-import {useEffect, useState} from "react";
 
-import {GradeCalculator} from "./GradeCalculator.tsx";
-import {FaRegSun} from "react-icons/fa";
-import {FaRegMoon} from "react-icons/fa";
-import {Content} from "../components/Content.tsx";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { HomePage } from "./HomePage.tsx";
+import { AboutPage } from "./AboutPage.tsx";
+import { GradeSystemGuide } from "../components/blog/articles/GradeSystemGuide.tsx";
+import { NavBar } from "../components/NavBar.tsx";
+import {BlogPage} from "./BlogPage.tsx";
+import {InPersonTestTips} from "../components/blog/articles/InPersonTestTips.tsx";
+import {ProjetoIntegrador} from "../components/blog/articles/ProjetoIntegrador.tsx";
 
 export const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('darkTheme') !== 'not-dark';
+  });
 
-    const darkTheme = localStorage.getItem('darkTheme');
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem('darkTheme', 'dark');
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem('darkTheme', 'not-dark');
+    }
+  }, [isDarkMode]);
 
-    const [isDarkMode, setIsDarkMode] = useState(darkTheme !== 'not-dark');
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
 
+  return (
+    <BrowserRouter>
+      <NavBar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
-    useEffect(() => {
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
 
-        if (isDarkMode) {
-            document.body.classList.add("dark");
-        } else {
-            document.body.classList.remove("dark");
-        }
+          <Route path="/sobre" element={<AboutPage />} />
 
-        localStorage.setItem('darkTheme', isDarkMode ? 'dark' : 'not-dark');
-    }, [isDarkMode]);
+          <Route path="/blog" element={<BlogPage />} />
 
+          <Route path="/blog/guia-sistema-avaliacao-univesp" element={<GradeSystemGuide />} />
+          <Route path="/blog/dicas-prova-presencial-univesp" element={<InPersonTestTips />} />
+          <Route path="/blog/desvendando-projeto-integrador-univesp" element={<ProjetoIntegrador />} />
 
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-    };
-
-    return (
-        <>
-            <header className="flex items-center justify-around bg-[#F0F7FF] dark:bg-gray-800 p-4 text-white">
-                <h1 className="text-3xl font-bold text-black dark:text-white">Calculadora Média UNIVESP</h1>
-                <button
-                    onClick={() => toggleDarkMode()}
-                    className="px-4 py-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded"
-                    aria-label="Theme button"
-                >
-                    {isDarkMode ?
-                        <FaRegSun/> : <FaRegMoon/>
-                    }
-                </button>
-
-            </header>
-
-            <GradeCalculator/>
-            <Content/>
-
-        </>
-    )
-}
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
+};
