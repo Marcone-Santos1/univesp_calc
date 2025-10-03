@@ -1,5 +1,6 @@
 import {PESOS} from "./Constants.ts";
 import {GradesProp} from "../Contracts/GradesProp.ts";
+import {HistoryEntryProp} from "../Contracts/HistoryEntryProp.ts";
 
 
 export const calcMediaFinal = ({g1, g2}: GradesProp) => {
@@ -20,3 +21,13 @@ export const simularRegular = ({g1}: GradesProp) => {
 export const simularExame = ({g1}: GradesProp) => {
     return 2 * PESOS.MEDIA_FINAL - g1
 }
+
+export const loadHistoryFromStorage = (): HistoryEntryProp[] => {
+  try {
+    const savedHistory = localStorage.getItem('univespCalcHistory');
+    return savedHistory ? JSON.parse(savedHistory) : [];
+  } catch (error) {
+    console.error("Failed to parse history from localStorage", error);
+    return [];
+  }
+};
