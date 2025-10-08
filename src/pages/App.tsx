@@ -9,6 +9,7 @@ import { NavBar } from "../components/NavBar.tsx";
 import {BlogPage} from "./BlogPage.tsx";
 import {InPersonTestTips} from "../components/blog/articles/InPersonTestTips.tsx";
 import {ProjetoIntegrador} from "../components/blog/articles/ProjetoIntegrador.tsx";
+import {UseOfStudies} from "../components/blog/articles/UseOfStudies.tsx";
 
 export const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -44,6 +45,7 @@ export const App = () => {
           <Route path="/blog/guia-sistema-avaliacao-univesp" element={<GradeSystemGuide />} />
           <Route path="/blog/dicas-prova-presencial-univesp" element={<InPersonTestTips />} />
           <Route path="/blog/desvendando-projeto-integrador-univesp" element={<ProjetoIntegrador />} />
+          <Route path="/blog/aproveitamento-estudos-univesp" element={<UseOfStudies />} />
 
         </Routes>
       </main>
