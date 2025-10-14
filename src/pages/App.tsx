@@ -11,6 +11,7 @@ import {InPersonTestTips} from "../components/blog/articles/InPersonTestTips.tsx
 import {ProjetoIntegrador} from "../components/blog/articles/ProjetoIntegrador.tsx";
 import {UseOfStudies} from "../components/blog/articles/UseOfStudies.tsx";
 import {DisciplinaEAD} from "../components/blog/articles/DisciplinaEAD.tsx";
+import {ExameUnivesp} from "../components/blog/articles/ExameUnivesp.tsx";
 
 export const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -48,6 +49,7 @@ export const App = () => {
           <Route path="/blog/desvendando-projeto-integrador-univesp" element={<ProjetoIntegrador />} />
           <Route path="/blog/aproveitamento-estudos-univesp" element={<UseOfStudies />} />
           <Route path="/blog/disciplina-e-procrastinacao-univesp" element={<DisciplinaEAD />} />
+          <Route path="/blog/guia-exame-recuperacao-univesp" element={<ExameUnivesp />} />
 
         </Routes>
       </main>

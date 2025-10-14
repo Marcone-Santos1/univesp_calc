@@ -38,6 +38,13 @@ const articles = [
     date: '2025-10-14',
     tags: ['Disciplina', 'EAD', 'Produtividade', 'Dicas']
   },
+  {
+    slug: '/blog/guia-exame-recuperacao-univesp',
+    title: 'Ficou de Exame na UNIVESP? O Guia Definitivo para a Recuperação',
+    description: 'Ficou de exame na UNIVESP? Aprenda a calcular a nota que você precisa, crie um plano de estudos focado e garanta sua aprovação na recuperação.',
+    date: '2025-10-14',
+    tags: ['Exame', 'Recuperação', 'Provas', 'Notas', 'Acadêmico']
+  },
 ];
 
 export const BlogPage = () => {
