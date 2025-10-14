@@ -30,7 +30,14 @@ const articles = [
     description: 'Guia completo sobre o aproveitamento de estudos na UNIVESP. Descubra como validar disciplinas, documentos necessários, prazos e critérios para dispensa de matérias.',
     date: '2025-10-09',
     tags: ['Aproveitamento', 'Disciplinas', 'Regulamento', 'Documentos']
-  }
+  },
+  {
+    slug: '/blog/disciplina-e-procrastinacao-univesp',
+    title: 'A \'Liberdade\' do EAD na UNIVESP te Assusta? Um Guia para Criar Disciplina e Vencer a Procrastinação',
+    description: 'Um guia completo para criar disciplina e uma rotina de estudos eficiente no EAD da UNIVESP. Aprenda a vencer a procrastinação com dicas e técnicas práticas.',
+    date: '2025-10-14',
+    tags: ['Disciplina', 'EAD', 'Produtividade', 'Dicas']
+  },
 ];
 
 export const BlogPage = () => {
